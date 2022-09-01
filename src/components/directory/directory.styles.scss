@@ -1,0 +1,36 @@
+.directory-container {
+  width: 100vw;
+  margin-top: 10%;
+  margin-left: 13%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, [col] 150px); 
+  grid-template-rows: repeat(2, [row] auto);
+  background-color: #fff;
+  color: #444;
+}
+
+.a {
+  grid-column: col / span 2;
+  grid-row: row;
+}
+
+.b {
+  grid-column: col 3 / span 2;
+  grid-row: row;
+}
+
+.c {
+  grid-column: col 5 /span 2;
+  grid-row: row;
+}
+
+.d {
+  grid-column: col / span 3;
+  grid-row: row 2;
+}
+
+.e {
+  grid-column: col 4 / span 3;
+  grid-row: row 2;
+}
