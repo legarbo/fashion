@@ -19,10 +19,10 @@ const Navigation = () => {
             <Link className='nav-link' to='/contact'>
               CONTACT 
             </Link>
-            <Link className='nav-link' to='/sign-in'>
+            <Link className='nav-link' to='/authentication'>
               SIGN IN 
             </Link>
-            <Link className='shopping-bag-container' to='/sign-in'>
+            <Link className='shopping-bag-container' to='/authentication'>
               <ShopBag className='shopping-bag' />
             </Link>
           </div>
