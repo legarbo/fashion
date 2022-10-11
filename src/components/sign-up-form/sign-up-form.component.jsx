@@ -7,6 +7,8 @@ import  {
 
 import FormInput from '../form-input/form-input.component.jsx';
 import Button from '../button/button.component.jsx';
+import { UserContext } from '../../contexts/user.context';
+
 import './sign-up-form.styles.scss';
 
 const defaultFormFields = {
@@ -23,10 +25,6 @@ const SignUpForm = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   }
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormFields({...formFields, [name]: value});
-  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,9 +36,7 @@ const SignUpForm = () => {
 
     try {
       const { user } = await createAuthUserWithEmailAndPassword(email, password);
-      console.log(user);
-      const userDocRef = await createUserDocumentFromAuth(user, { displayName });
-      console.log(userDocRef);
+      await createUserDocumentFromAuth(user, { displayName});
       resetFormFields();
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
@@ -49,6 +45,11 @@ const SignUpForm = () => {
         console.log('user creation encountered an error', error)
       }
     }
+  }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormFields({...formFields, [name]: value});
   }
 
   return (
@@ -72,7 +73,7 @@ const SignUpForm = () => {
             name='email' value={email} 
           />
           <FormInput 
-            label='password'
+            label='Password'
             type='password' 
             required
             onChange={handleChange} 
@@ -90,7 +91,7 @@ const SignUpForm = () => {
           <Button type='submit'>Sign Up</Button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default SignUpForm;
