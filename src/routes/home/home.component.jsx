@@ -7,31 +7,31 @@ const Home = () => {
     id: 1,
     title: "hats",
     imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-    styles: ["category-container a"]
+    styles: ["directory-item-container a"]
   },
   {
     id: 2,
     title: "jackets",
     imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-    styles: ["category-container b"]
+    styles: ["directory-item-container b"]
   },
   {
     id: 3,
     title: "sneakers",
     imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    styles: ["category-container c"]
+    styles: ["directory-item-container c"]
   },
   {
     id: 4,
     title: "womens",
     imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-    styles: ["category-container d"]
+    styles: ["directory-item-container d"]
   },
   {
     id: 5,
-    title: "men",
+    title: "mens",
     imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-    styles: ["category-container e"]
+    styles: ["directory-item-container e"]
   }
 ];
 
